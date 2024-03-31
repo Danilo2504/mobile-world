@@ -1,0 +1,77 @@
+.container {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0px 2px 9px #dadada;
+}
+
+.logoContainer {
+  min-width: 100px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+
+.navMenu {
+  display: flex;
+  height: 100%;
+  gap: 15px;
+  max-width: 700px;
+  flex-direction: row;
+}
+
+.navItem {
+  padding: 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+  &:hover {
+    color: #5d5d5d;
+    transform: scale(1.1);
+  }
+}
+
+.filterContainer {
+  position: relative;
+  height: 100%;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover > ul {
+    display: flex;
+  }
+}
+
+.filterContainer > ul {
+  display: none;
+}
+
+.listContainer {
+  position: absolute;
+  padding: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: 100px;
+  margin-top: 200px;
+  padding-inline: 20px;
+  min-width: 150px;
+  list-style: none;
+  background-color: #f1f1f1;
+  box-shadow: 0px 2px 9px #dadada;
+  &:hover {
+    display: flex;
+  }
+}

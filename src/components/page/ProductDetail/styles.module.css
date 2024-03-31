@@ -1,0 +1,67 @@
+.productContainer {
+  display: grid;
+  flex: 1;
+  align-self: center;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #fffefe;
+  box-shadow: 0px 2px 9px #dadada;
+  width: 1024px;
+  margin: 30px 60px;
+}
+
+.leftCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  object-fit: contain;
+  aspect-ratio: auto;
+  height: 600px;
+  width: 100%;
+}
+
+.rightCol {
+  margin: 16px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px #0000001a solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.goBackButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #000c8b;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.counterContainer {
+  margin-top: 10px;
+  display: flex;
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+  height: 30px;
+  width: 120px;
+}
+
+.text {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 30%;
+  border: none;
+  cursor: pointer;
+}
