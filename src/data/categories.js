@@ -1,7 +1,7 @@
 export const categories = [
   {
     id: 1,
-    label: "Telefonos",
+    label: "TELEFONOS",
     category: "mobile",
     types: {
       android: "android",
@@ -10,7 +10,7 @@ export const categories = [
   },
   {
     id: 2,
-    label: "Accesorios de Telefono",
+    label: "ACCESORIOS DE TELEFONO",
     category: "accesories",
     types: {
       android: "android",
