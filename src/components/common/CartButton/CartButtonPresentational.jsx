@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 const CartButtonPresentational = ({ cartCount }) => {
   return (
-    <Link to={"/cart"} className={styles.cartButton}>
-      <Cart />
-      <span>{cartCount}</span>
-    </Link>
+    <div className={styles.container}>
+      <Link to={"/cart"} className={styles.cartButton}>
+        <Cart className={styles.cartIcon} />
+        <span>{cartCount}</span>
+      </Link>
+    </div>
   );
 };
 
