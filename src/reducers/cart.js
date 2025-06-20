@@ -54,6 +54,7 @@ export const cartReducer = (state, action) => {
       } else {
         return state;
       }
+      break;
     }
 
     case CART_ACTION_TYPES.REMOVE_PRODUCT: {
