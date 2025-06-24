@@ -8,4 +8,4 @@ const CartButton = () => {
   return <CartButtonPresentational cartCount={cart.length} />;
 };
 
-export default CartButton;
+export default CartButton

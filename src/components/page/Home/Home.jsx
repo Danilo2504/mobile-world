@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { Loading } from "../../layout";
 import { useFetch } from "../../../hooks/useFetch";
 import { getProducts } from "../../../services/getProducts";
 import HomePresentational from "./HomePresentational";
+import { Loading } from "../../layout";
 
 function Home() {
   const { categoryId } = useParams();

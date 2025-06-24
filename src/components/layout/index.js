@@ -1,5 +1,5 @@
-import Navbar from "./Navbar/Navbar";
-import Layout from "./Layout";
+import Layout from "./Layout.jsx";
+import Header from "./Header/Header";
 import Loading from "./Loading/Loading";
 
-export { Navbar, Layout, Loading };
+export { Layout, Header, Loading };

@@ -13,25 +13,317 @@
   src: url("./fonts/FF_Mark_Pro-Medium.otf");
 }
 
-body {
-  margin: 0;
-  min-width: 0;
-  background-color: #fbfbfb;
+:root {
+  --color-primary: #2563EB;         /* Azul vibrante (botones) */
+  --color-primary-hover: #1D4ED8;   /* Azul más oscuro (hover botón) */
+  --color-outline: #93C5FD;
+  --color-icon-hover: #7e7e7e57;
+  --color-navbar-bg: #1E2A38;       /* Azul oscuro (navbar) */
+  --color-navbar-text: #FFFFFF;     /* Blanco (texto navbar) */
+
+  --color-background: #F3F4F6;      /* Gris muy claro (fondo general) */
+  --color-card-bg: #FFFFFF;         /* Fondo de cards */
+
+  --color-text-default: #111827;
+  --color-text-light: #FFFFFF;
 }
 
-#root {
-  text-wrap: pretty;
-  font-family: "FF Mark Pro", sans-serif;
-  color: #2b2b2b;
+/* ===================================================================
+   RESET Y ESTILOS BASE
+   =================================================================== */
+
+/* Reset básico del body */
+*{
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  min-width: 0;
+  background-color: var(--color-background);
+  text-wrap: pretty;
+  font-family: "FF Mark Pro", sans-serif;
+  color: #2b2b2b;
+}
+
+/* Herencia de fuente para elementos de formulario y enlaces */
+input, 
+button, 
+select, 
+textarea, 
+a, 
+span {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Reset de listas */
+ul, 
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Reset de enlaces */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-p {
+/* Reset de títulos y párrafos */
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
   margin: 0;
   text-wrap: pretty;
+}
+
+/* ===================================================================
+   SISTEMA DE LAYOUT
+   =================================================================== */
+
+/* Contenedor principal responsive */
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Contenedor principal flex */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1 0 auto;
+}
+
+/* ===================================================================
+   COMPONENTES DE IMAGEN
+   =================================================================== */
+
+/* Imagen responsive */
+.imgResponsive {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ===================================================================
+   SISTEMA DE FORMULARIOS
+   =================================================================== */
+
+/* Grupo de input (contenedor) */
+.inputGroup {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Estilos comunes para inputs */
+.inputCommon {
+  padding: 10px;
+  border: 1px solid var(--color-background);
+  background-color: var(--color-card-bg);
+  border-radius: 4px;
+  font-size: 12px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Inputs dentro de inputGroup */
+.inputGroup input,
+.inputGroup select {
+  flex: 1;
+  border-right: none !important;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Botones dentro de inputGroup */
+.inputGroup button {
+  border-left: none !important;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ===================================================================
+   SISTEMA DE BOTONES
+   =================================================================== */
+
+/* Botón primario */
+.buttonPrimary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid var(--color-primary-hover);
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  color: var(--color-navbar-text);
+  font-weight: 500;
+  font-size: 16px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Botón con icono */
+.buttonIcon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+  color: var(--color-navbar-text);
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.buttonIcon:hover {
+  opacity: 0.8;
+  background-color: var(--color-icon-hover);
+}
+
+/* ===================================================================
+   SISTEMA DE ENLACES
+   =================================================================== */
+
+/* Enlace primario con efecto subrayado animado */
+.linkPrimary {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Pseudo-elemento para la línea animada */
+.linkPrimary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary);
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+  transform: translate3d(-100%, 0, 0);
+}
+
+/* Estados hover y focus del enlace */
+.linkPrimary:hover::after,
+.linkPrimary:focus::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.linkPrimary:hover { 
+  opacity: 0.8;
+}
+
+/* ===================================================================
+   ESTADOS DE FOCUS
+   =================================================================== */
+
+/* Focus general para elementos de formulario */
+input:focus, 
+button:focus, 
+select:focus, 
+textarea:focus {
+  outline: 1px solid var(--color-outline);
+}
+
+/* Focus específico para elementos dentro de inputGroup */
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus,
+.inputGroup button:focus {
+  outline: none;
+}
+
+/* Focus para el contenedor inputGroup */
+.inputGroup:focus-within {
+  outline: 2px solid var(--color-outline);
+}
+
+/* ===================================================================
+   COMPONENTES ESPECÍFICOS
+   =================================================================== */
+
+/* Header */
+header {
+  background-color: var(--color-navbar-bg);
+}
+
+.categoriesContainer {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.categoriesContainer .categoryItem {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   =================================================================== */
+
+/* Extra Large devices (1400px y más) */
+@media (max-width: 1399px) {
+  /* Estilos para pantallas muy grandes */
+}
+
+/* Large devices (1200px - 1399px) */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Medium devices (992px - 1199px) */
+@media (max-width: 991px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Small devices (768px - 991px) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Extra small devices (576px - 767px) */
+@media (max-width: 575px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Mobile devices (490px - 575px) */
+@media (max-width: 490px) {
+  .container {
+    max-width: 100%;
+  }
 }

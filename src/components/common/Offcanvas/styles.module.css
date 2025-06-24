@@ -1,0 +1,122 @@
+.offcanvasContainer {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   display: flex;
+   justify-content: flex-end;
+   z-index: 50;
+}
+
+.offcanvasContainer.offcanvas-start{
+   justify-content: flex-start !important;
+}
+
+.offcanvasContainer.offcanvas-end{
+   justify-content: flex-end !important;
+}
+
+.offcanvasContainer.offcanvas-backdrop {
+   background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.offcanvasContainer.offcanvasInvisible{
+   visibility: hidden;
+   opacity: 0;
+}
+
+.offcanvasContainer.offcanvasVisible{
+   visibility: visible;
+   opacity: 1;
+}
+
+.offcanvasContent.offcanvasInvisible{
+   transform: translateX(100%);
+}
+
+.offcanvasContent.offcanvasVisible{
+   transform: translateX(0);
+}
+
+.offcanvasContent {
+   width: 100%;
+   max-width: 350px;
+   height: 100%;
+   position: relative;
+   z-index: 70;
+   padding: 20px;
+   background-color: var(--color-background);
+   overflow: hidden;
+   transition: transform .5s ease-in-out;
+}
+
+.offcanvasContainer.offcanvas-start .offcanvasContent{
+   border-radius: 0 12px 12px 0;
+   padding: 20px 40px 20px 20px;
+}
+
+.offcanvasContainer.offcanvas-end .offcanvasContent{
+   border-radius: 12px 0 0 12px;
+   padding: 20px 20px 20px 40px;
+}
+
+.offcanvasHeader{
+   position: relative;
+   padding-top: 20px;
+}
+
+.offcanvasImageContainer{
+   width: 170px;
+   display: inline-flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.offcanvasCloseButton{
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   z-index: 71;
+   color: var(--color-navbar-bg);
+}
+
+.offcanvasBody {
+   padding: 40px 0;
+   overflow-y: auto;
+   height: calc(100% - 60px);
+   color: var(--color-navbar-bg);
+}
+
+.subtitle {
+   font-size: 14px;
+   font-weight: 500;
+   margin-bottom: 10px;
+}
+
+.separator::after {
+   content: '';
+   display: block;
+   width: 100%;
+   height: 1px;
+   background-color: var(--color-navbar-bg);
+   margin: 5px 0;
+}
+
+.categoriesContainer{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   font-size: 10px;
+   gap: 0;
+   margin-bottom: 10px;
+}
+
+@media (max-width: 490px) {
+  .offcanvasContent {
+    max-width: 90%;
+  }
+}
