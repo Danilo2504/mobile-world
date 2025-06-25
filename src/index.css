@@ -178,6 +178,28 @@ h6 {
   background-color: var(--color-primary-hover);
 }
 
+.buttonWhite {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid var(--color-card-bg);
+  border-radius: 4px;
+  background-color: var(--color-card-bg);
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 16px;
+  height: 40px;
+  opacity: 0.7;
+  transition: color 0.3s ease, opacity 0.3s ease-in-out;
+}
+
+.buttonWhite:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
 /* Botón con icono */
 .buttonIcon {
   display: inline-flex;
