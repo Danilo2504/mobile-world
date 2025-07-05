@@ -5,8 +5,8 @@ const HomePresentational = ({ data }) => {
   return (
     <>
       <main className={styles.cardsGrid}>
-        {data?.map((product, index) => (
-          <Card key={index} data={product} />
+        {data?.slice(0,10).map((product, index) => (
+          <Card key={index} data={product} cardTitle="Oferta del dia"/>
         ))}
       </main>
     </>
