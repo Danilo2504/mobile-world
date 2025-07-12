@@ -1,7 +1,16 @@
-.cardsGrid {
+.home {
+  margin: 30px 60px 60px;
+}
+
+.banner{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  column-gap: 15px;
-  row-gap: 30px;
-  margin: 30px 60px 60px;
+  gap: 15px;
 }

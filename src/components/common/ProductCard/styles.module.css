@@ -1,0 +1,87 @@
+.cardInnerContainer:hover .image{
+  transform: scale(1.05);
+}
+
+.cardInnerContainer:hover .title{
+  color: var(--color-primary);
+}
+
+.imageContainer {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.image {
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-out;
+}
+
+.title{
+  display: block;
+  color: var(--color-text);
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.textOriginalPrice {
+  color: #707070;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.textDiscountedPrice {
+  color: var(--color-green);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.textPrice {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.info {
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: var(--color-gray);
+  font-size: 14px;
+  margin-bottom: 10px;
+  position: relative;
+  line-height: 15px;
+  max-height: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description::after {
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), var(--color-white) 90%);
+}
+
+.freeDelivery{
+  color: var(--color-green);
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.textDelivery{
+  margin-right: 5px;
+}

@@ -1,28 +1,26 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { classList, toggleClass } from "../../../utils/classList";
 import { calculateDiscountedPrice, formatPrice } from "../../../utils/numbers";
 import { IconTruckDelivery } from "@tabler/icons-react";
+import Card from "../Card/Card";
 
-const CardPresentational = ({ data, cardTitle }) => {
-  const navigate = useNavigate();
-  
-  return (
-    <div className={styles.cardContainer}>
-      {cardTitle && <div className={styles.cardTitle}><h4>{cardTitle}</h4></div>}
-      <div
+const ProductCardPresentational = ({ data, cardTitle, noCardWrapper }) => {
+  const content = (
+    <div className={styles.cardInnerContainer}>
+      <Link
         className={styles.imageContainer}
-        onClick={() => navigate(`/product/${data.id}`)}
+        to={`/product/${data.id}`}
       >
         <img
           src={data.image_url}
           className={classList([styles.image, 'imgResponsive'])}
         />
-      </div>
+      </Link>
       <div className={styles.info}>
-        <Link to={`/product/${data.id}`} className={styles.title}>
+        <h4 className={styles.title}>
           {data.title}
-        </Link>
+        </h4>
         {!(data.discount || data.freeDelivery) && (
           <p className={styles.description}>{data.description}</p>
         )}
@@ -39,6 +37,16 @@ const CardPresentational = ({ data, cardTitle }) => {
       </div>
     </div>
   );
+
+  if (noCardWrapper) {
+    return content;
+  }
+  
+  return (
+    <Card headerTitle={cardTitle}>
+      {content}
+    </Card>
+  );
 };
 
-export default CardPresentational;
+export default ProductCardPresentational;
