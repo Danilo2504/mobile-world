@@ -1,3 +1,12 @@
+/* Responsive
+   - Extra Extra Small: 375px
+   - Extra Small: 574px
+   - Small: 768px
+   - Medium: 992px
+   - Large: 1200px
+   - Extra Large: 1440px
+*/
+
 @font-face {
   font-family: "FF Mark Pro Thin";
   src: url("./fonts/FF_Mark_Pro-Thin.otf");
@@ -345,7 +354,7 @@ header {
 }
 
 /* Mobile devices (490px - 575px) */
-@media (max-width: 490px) {
+@media (max-width: 375px) {
   .container {
     max-width: 100%;
   }
