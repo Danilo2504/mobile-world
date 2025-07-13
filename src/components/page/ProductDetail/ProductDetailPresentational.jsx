@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ArrowLeft from "../../../assets/arrow-left.svg?react";
 import styles from "./styles.module.css";
 
 const ProductDetailPresentational = ({
@@ -16,7 +15,6 @@ const ProductDetailPresentational = ({
       </div>
       <div className={styles.rightCol}>
         <Link to={"/"} className={styles.goBackButton}>
-          <ArrowLeft />
           <p>Volver</p>
         </Link>
         <div

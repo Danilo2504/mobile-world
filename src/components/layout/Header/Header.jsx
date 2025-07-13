@@ -1,8 +1,9 @@
 import { CartButton, Offcanvas } from "../../common";
 import { Link } from "react-router-dom";
-import { categories, logo_brand, IconMenu2, IconSearch, styles } from './assets.js';
+import { categories, IconMenu2, IconSearch, styles } from './assets.js';
 import { useToggle } from '../../../hooks/useToggle.js';
 import { classList } from "../../../utils/classList.js";
+import { images } from "../../../utils/assets.js";
 
 const Header = () => {
   const { isVisible, closeVisibility, openVisibility } = useToggle(false);
@@ -12,7 +13,7 @@ const Header = () => {
       <div className={classList(["container", styles.headerContent])}>
         <div className={styles.brandContainer}>
           <Link to={"/"} className={styles.brandLink}>
-            <img className="imgResponsive" src={logo_brand} width={200} height={40} alt="imagen del logo" />
+            <img className="imgResponsive" src={images("logo-brand.png")} width={200} height={40} alt="imagen del logo" />
           </Link>
         </div>
         <div className={styles.searchbarContainer}>

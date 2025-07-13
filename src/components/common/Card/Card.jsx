@@ -1,4 +1,5 @@
 import { classList } from '../../../utils/classList';
+import { getTypeFromEnum } from '../../../utils/enums';
 import styles from './styles.module.css';
 
 const separatorDictionary = {
@@ -8,20 +9,15 @@ const separatorDictionary = {
    NONE: ''
 };
 
-const getSeparatorType = (separator) => {
-   if (separator === true) {
-      return separatorDictionary.BOTH;
-   } else if (separator && separatorDictionary[separator]) {
-      return separatorDictionary[separator] ?? separatorDictionary.NONE;
-   } else {
-      return separatorDictionary.NONE;
-   }
-}
-
 const Card = ({headerTitle, toolbar, textFooter, separator = 'NONE', responsiveClass, children}) => {
    const hasHeader = headerTitle || toolbar;
    const hasFooter = textFooter !== undefined || textFooter !== null;
-   const hasSeparator = getSeparatorType(separator);
+   const hasSeparator = getTypeFromEnum({
+      value: separator,
+      enumObj: separatorDictionary,
+      defaultKeyù: separatorDictionary.NONE,
+      trueKey: separatorDictionary.BOTH
+   });
 
    return (
       <div className={classList([styles.cardContainer, responsiveClass, hasSeparator])}>

@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 import { Loading } from "../../layout";
-import ArrowLeft from "../../../assets/arrow-left.svg?react";
 import styles from "./styles.module.css";
 import { getProductById } from "../../../services/getProductById";
 import { useFetch } from "../../../hooks/useFetch";

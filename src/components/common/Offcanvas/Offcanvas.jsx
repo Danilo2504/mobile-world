@@ -2,8 +2,9 @@
 import styles from './styles.module.css';
 import { Link } from "react-router-dom";
 import { CartButton } from "../";
-import { IconX, categories, logo_brand } from "./assets.js";
+import { IconX, categories } from "./assets.js";
 import { classList } from '../../../utils/classList.js';
+import { images } from '../../../utils/assets.js';
 
 const Offcanvas = ({isVisible = false, closeVisibility, backdrop = false, placement = 'end'}) => {
    return (
@@ -17,10 +18,10 @@ const Offcanvas = ({isVisible = false, closeVisibility, backdrop = false, placem
                   <IconX fontSize={20}/>
                </button>
                <div className={styles.offcanvasImageContainer}>
-                  <img className='imgResponsive' src={logo_brand} width={200} height={40} alt="imagen del logo"/>
+                  <img className='imgResponsive' src={images("logo-brand.png")} width={200} height={40} alt="imagen del logo"/>
                </div>
             </div>
-            <div className={styles.offcanvasBody}> {/* TODO usar subtitulos como separadores de secciones */}
+            <div className={styles.offcanvasBody}>
                <h4 className={classList([styles.subtitle, styles.separator])}>CATEGORIES</h4>
                <ul className={classList([styles.categoriesContainer, 'categoriesContainer'])}>
                   {categories.map((category, index) => (
